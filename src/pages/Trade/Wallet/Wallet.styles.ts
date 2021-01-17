@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Text } from "../../../components";
 
 export const StyledAsssets = styled.div`
-  margin-top: 18px;
+  margin: 18px 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row-reverse;
@@ -31,5 +31,4 @@ export const TitleText = styled(Text)`
 export const StyledWallet = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 50vh;
 `;

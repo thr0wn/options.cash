@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledContent = styled.div`
   position: relative;
   z-index: 2;
-  padding: 32px 64px;
+  padding: 32px;
 
   @media (max-width: 1440px) {
     overflow-x: hidden;

@@ -1,7 +1,7 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
 import { Blockchain } from "../../components";
-// import { Positions } from "./Positions";
+import { Positions } from "./Positions";
 import { Wallet } from "./Wallet";
 import { Options } from "./Options";
 import { StyledContent, StyledTrade } from "./Trade.styles";
@@ -11,13 +11,13 @@ export const Trade = () => {
     <StyledTrade>
       <Blockchain />
       <StyledContent>
-        <Grid container spacing={2}>
+        <Grid container spacing={8}>
           <Grid item md={7} xs={12}>
             <Options />
           </Grid>
           <Grid item md={5} xs={12}>
             <Wallet />
-            {/* <Positions /> */}
+            <Positions />
           </Grid>
         </Grid>
       </StyledContent>

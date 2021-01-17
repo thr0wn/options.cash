@@ -19,7 +19,7 @@ export const StyledTable = styled.div`
 
   *,
   .MuiInputBase-input {
-    color: white !important;
+    color: white;
   }
 
   .Mui-disabled {
