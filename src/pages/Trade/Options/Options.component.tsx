@@ -80,9 +80,10 @@ export const Options = () => {
     <Fade triggerOnce>
       <StyledOptions>
         <TitleText variant="h5" marked>
-          Trade
+          Options
         </TitleText>
         <StyledTable>
+          <Button>+ Write Option</Button>
           <Table data={data} columns={columns} />
         </StyledTable>
       </StyledOptions>

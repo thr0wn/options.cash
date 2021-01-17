@@ -2,7 +2,16 @@ import styled from "styled-components";
 import { Text } from "../../../components";
 
 export const StyledTable = styled.div`
+  display: flex;
+  flex-direction: column;
+
   margin-top: 18px;
+
+  button {
+    align-self: flex-end;
+    margin-bottom: 18px;
+    display: inline-block;
+  }
 
   .MuiTableRow-root td:first-child {
     width: 120px;
