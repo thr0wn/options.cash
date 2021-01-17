@@ -6,6 +6,11 @@
   <p><strong>options.cash:&nbsp;</strong>On-chain options on Bitcoin Cash</p>
 </div>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5a310ca4-c269-4935-ac80-0a9fe0361aef/deploy-status)](https://app.netlify.com/sites/angry-ramanujan-36e441/deploys)
+
+[![](https://img.shields.io/badge/-Typescript-gray?logo=typescript)]()
+[![](https://img.shields.io/badge/-React-gray?logo=react)]()
+
 ## 🔍 About
 options.cash aims to bring decentralized non-custodial options to Bitcoin Cash through covenant contracts and price oracles. Options are a type of derivative in which the investor pay for the right to optionally buy or sell an asset at an agreed-upon price and date.
 
