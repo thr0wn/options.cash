@@ -29,6 +29,13 @@ export const GlobalStyles = createGlobalStyle`
   .MuiDialog-paper {
     background: rgba(44, 50, 64, 1) !important;
     padding: 18px 0;
+
+    > .MuiButtonBase-root {
+      position: absolute;
+      color: white;
+      right: 24px;
+      padding: 0;
+    }
   }
 
   .MuiDialogTitle-root {

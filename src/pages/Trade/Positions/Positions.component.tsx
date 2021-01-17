@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { Table, AssetPair, Button, Text } from "../../../components";
+import { Option } from "../Option";
 import { TitleText, StyledPositions, StyledTable } from "./Positions.styles";
 
 export const Positions = () => {
+  const [selectedOption, setSelectedOption] = useState<any>();
   const columns = ["Pair", "Type", "Expires in", "Profit (satoshis)", ""];
 
   const data = [
@@ -24,9 +26,16 @@ export const Positions = () => {
       "Call",
       "28 hours",
       <Text style={{ color: "green" }}>+5000</Text>,
-      <Button>Details</Button>,
+      (index) => {
+        return <Button onClick={() => onRowClick(index)}>Details</Button>;
+      },
     ],
   ];
+
+  const onRowClick = (index) => {
+    const option = data[index];
+    setSelectedOption(option);
+  };
 
   return (
     <Fade triggerOnce>
@@ -37,6 +46,13 @@ export const Positions = () => {
         <StyledTable>
           <Table data={data} columns={columns} />
         </StyledTable>
+        <Option
+          columns={columns}
+          open={!!selectedOption}
+          option={selectedOption}
+          onClose={() => setSelectedOption(null)}
+          isPosition
+        />
       </StyledPositions>
     </Fade>
   );

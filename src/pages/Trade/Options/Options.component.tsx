@@ -105,6 +105,7 @@ export const Options = () => {
           <Table data={data} columns={columns} />
         </StyledTable>
         <Option
+          columns={columns}
           open={!!selectedOption}
           option={selectedOption}
           onClose={() => setSelectedOption(null)}
