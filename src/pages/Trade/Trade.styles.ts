@@ -8,6 +8,10 @@ export const StyledContent = styled.div`
   @media (max-width: 1440px) {
     overflow-x: hidden;
   }
+
+  @media (max-width: 960px) {
+    padding: 16px;
+  }
 `;
 
 export const StyledTrade = styled.div`
@@ -15,5 +19,14 @@ export const StyledTrade = styled.div`
   margin: 0 auto;
   min-height: 100vh;
   position: relative;
-  background: rgba(0, 0, 0, 0.5);
+
+  &:before {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    content: "";
+    display: block;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+  }
 `;

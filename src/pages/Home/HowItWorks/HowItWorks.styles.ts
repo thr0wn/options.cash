@@ -4,7 +4,7 @@ import { Text } from "../../../components";
 export const TitleText = styled(Text)`
   display: inline-block;
   padding: 12px 18px;
-  align-self: self-end;
+  align-self: flex-end;
 `;
 
 export const StyledHowItWorks = styled.div`
@@ -23,7 +23,7 @@ export const StyledHowItWorks = styled.div`
       rgba(44, 50, 64, 1) 0%,
       rgba(0, 0, 0, 1) 50%
     );
-    content: '';
+    content: "";
     display: block;
     top: 0px;
     width: 100vw;
@@ -48,5 +48,13 @@ export const StyledHowItWorks = styled.div`
     max-width: calc(1440px - 256px);
     position: relative;
     z-index: 2;
+  }
+
+  @media (max-width: 960px) {
+    padding: 16px;
+
+    .youtube {
+      width: calc(100vw - 16px);
+    }
   }
 `;

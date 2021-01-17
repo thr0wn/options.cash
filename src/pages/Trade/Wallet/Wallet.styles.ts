@@ -1,12 +1,35 @@
 import styled from "styled-components";
 import { Text } from "../../../components";
 
+export const StyledAsssets = styled.div`
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+
+  & > * {
+    margin: 12px 24px;
+  }
+
+  @media (max-width: 960px) {
+    justify-content: space-between;
+
+    & > * {
+      margin: 12px;
+    }
+  }
+`;
+
 export const TitleText = styled(Text)`
   padding: 12px 18px;
   text-align: left;
   line-height: 1;
+  display: inline-block;
+  align-self: flex-end;
 `;
 
 export const StyledWallet = styled.div`
-  padding-right: 400px;
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
 `;

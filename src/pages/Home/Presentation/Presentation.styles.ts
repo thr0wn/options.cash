@@ -7,6 +7,7 @@ export const SecondaryText = styled(Text)`
 `;
 
 export const MarkedText = styled(Text)`
+  position: relative;
   padding: 12px 18px;
   text-align: right;
 `;
@@ -20,4 +21,27 @@ export const StyledPresentation = styled.div`
   align-items: right;
   max-width: 450px;
   padding-left: 128px;
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    margin-left: 12px;
+    position: absolute;
+    width: 80px;
+    top: 0;
+    right: -100px;
+  }
+
+  @media (max-width: 960px) {
+    padding: 0 16px;
+
+    img {
+      position: absolute;
+      width: 80px;
+      top: -150%;
+      right: 0;
+    }
+  }
 `;

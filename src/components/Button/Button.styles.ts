@@ -7,8 +7,8 @@ export const StyledButton = styled(Button)`
   border-radius: 0 !important;
 
   &:hover {
-    color: #0ac18e !important;
     border-color: #0ac18e !important;
+    background: #0ac18e !important;
   }
 
   &.Mui-disabled {

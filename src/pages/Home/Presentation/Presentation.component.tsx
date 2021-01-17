@@ -2,7 +2,7 @@ import { Box } from "@material-ui/core";
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
-import { Button } from "../../../components";
+import { Button, Logo } from "../../../components";
 import {
   SecondaryText,
   MarkedText,
@@ -15,6 +15,7 @@ export const Presentation = () => {
       <Fade duration={1000} delay={1000} triggerOnce>
         <MarkedText variant="h3" marked>
           options.cash
+          <Logo width="80px" />
         </MarkedText>
       </Fade>
 
@@ -24,9 +25,7 @@ export const Presentation = () => {
         </SecondaryText>
         <Box display="flex" flexDirection="row-reverse">
           <Link to="trade">
-            <Button size="large">
-              Try it now
-            </Button>
+            <Button size="large">Try it now</Button>
           </Link>
         </Box>
       </Fade>
