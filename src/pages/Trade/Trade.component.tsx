@@ -11,7 +11,7 @@ export const Trade = () => {
     <StyledTrade>
       <Blockchain />
       <StyledContent>
-        <Grid container spacing={8}>
+        <Grid container spacing={2}>
           <Grid item md={7} xs={12}>
             <Options />
           </Grid>

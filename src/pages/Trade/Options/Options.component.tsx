@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { Table, AssetPair, Button } from "../../../components";
+import { Option } from "../Option";
 import { TitleText, StyledOptions, StyledTable } from "./Options.styles";
 
 export const Options = () => {
+  const [selectedOption, setSelectedOption] = useState<any>();
+
   const columns = [
     "Pair",
     "Type",
     "Token amount",
-    "Strike Price (satoshis)",
+    "Strike Price (sat)",
+    "Premium (sat)",
     "Expires in",
     "",
   ];
@@ -31,8 +35,11 @@ export const Options = () => {
       "Call",
       "50",
       "206750",
+      "10000",
       "30.5 hours",
-      <Button>Trade</Button>,
+      (index) => {
+        return <Button onClick={() => onRowClick(index)}>Trade</Button>;
+      },
     ],
     [
       <AssetPair
@@ -51,8 +58,11 @@ export const Options = () => {
       "Call",
       "10",
       "207000",
+      "9000",
       "72 hours",
-      <Button>Trade</Button>,
+      (index) => {
+        return <Button onClick={() => onRowClick(index)}>Trade</Button>;
+      },
     ],
     [
       <AssetPair
@@ -71,10 +81,18 @@ export const Options = () => {
       "Put",
       "1000",
       "267",
+      "8000",
       "3 hours",
-      <Button>Trade</Button>,
+      (index) => {
+        return <Button onClick={() => onRowClick(index)}>Trade</Button>;
+      },
     ],
   ];
+
+  const onRowClick = (index) => {
+    const option = data[index];
+    setSelectedOption(option);
+  };
 
   return (
     <Fade triggerOnce>
@@ -86,6 +104,11 @@ export const Options = () => {
           <Button>+ Write Option</Button>
           <Table data={data} columns={columns} />
         </StyledTable>
+        <Option
+          open={!!selectedOption}
+          option={selectedOption}
+          onClose={() => setSelectedOption(null)}
+        />
       </StyledOptions>
     </Fade>
   );

@@ -11,7 +11,6 @@ export const Table: React.FC<any> = ({
     <StyledTable>
       <MUIDataTable
         options={{
-          ...options,
           download: false,
           filter: false,
           filterArrayFullMatch: false,
@@ -20,7 +19,9 @@ export const Table: React.FC<any> = ({
           selectableRowsHeader: false,
           selectableRows: false,
           rowsPerPage: 50,
+          selectableRowsOnClick: false,
           rowsPerPageOptions: [10, 50, 100],
+          ...options,
         }}
         {...otherProps}
       />

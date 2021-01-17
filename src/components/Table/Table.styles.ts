@@ -11,9 +11,13 @@ export const StyledTable = styled.div`
 
   .MuiTableCell-head {
     background: transparent;
+    * {
+      color: white !important;
+    }
   }
 
   .MuiTableCell-root {
+    transition: background 0.3s ease;
     border-bottom: 1px solid rgba(44, 50, 64, 0.7);
   }
 
@@ -32,5 +36,15 @@ export const StyledTable = styled.div`
 
   .MuiInput-underline::after {
     border-bottom: 1px solid white;
+  }
+
+  .MuiTableBody-root {
+    .MuiTableRow-root {
+      &:hover {
+        .MuiTableCell-root {
+          background: rgba(44, 50, 64, 0.5);
+        }
+      }
+    }
   }
 `;

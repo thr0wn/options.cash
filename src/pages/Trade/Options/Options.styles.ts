@@ -7,14 +7,16 @@ export const StyledTable = styled.div`
 
   margin-top: 18px;
 
-  button {
+  > button {
     align-self: flex-end;
     margin-bottom: 18px;
     display: inline-block;
   }
 
-  .MuiTableRow-root td:first-child {
-    width: 120px;
+  .MuiTableRow-root td {
+    &:first-child {
+      width: 120px;
+    }
   }
 `;
 
