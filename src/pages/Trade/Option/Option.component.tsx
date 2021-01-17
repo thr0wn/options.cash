@@ -5,7 +5,7 @@ import {
   DialogContent,
   DialogTitle,
 } from "@material-ui/core";
-import { Table, AssetPair, Button } from "../../../components";
+import { Table, Button } from "../../../components";
 import { StyledOption, StyledTable, GlobalStyles } from "./Option.styles";
 
 interface OptionProps {
