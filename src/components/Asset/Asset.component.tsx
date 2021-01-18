@@ -1,8 +1,9 @@
-import React from "react";
-import { Badge, Tooltip } from "@material-ui/core";
-import SendIcon from "@material-ui/icons/Forward";
-import GetAppIcon from "@material-ui/icons/GetApp";
+import React, { useState } from "react";
+import { Badge, CircularProgress } from "@material-ui/core";
+import Blockies from "react-blockies";
+import ReactImageFallback from "react-image-fallback";
 import { StyledAsset } from "./Asset.styles";
+import { AssetDetails } from "../AssetDetails";
 
 interface AssetProps {
   tokenId?: string;
@@ -16,53 +17,43 @@ export const Asset: React.FC<AssetProps> = ({
   amount,
   ...otherProps
 }) => {
+  const [showDetails, setShowDetails] = useState(false);
+
   return (
-    <StyledAsset {...otherProps}>
+    <StyledAsset onClick={() => setShowDetails(true)} {...otherProps}>
       <Badge
-        badgeContent={
-          <Tooltip title="receive">
-            <GetAppIcon style={{ fontSize: 12 }} />
-          </Tooltip>
-        }
+        badgeContent={symbol}
         anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "right",
+          vertical: "top",
+          horizontal: "left",
         }}
       >
-        <Badge
-          badgeContent={
-            <Tooltip title="send">
-              <SendIcon style={{ fontSize: 12 }} />
-            </Tooltip>
-          }
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "left",
-          }}
-        >
-          <Badge
-            badgeContent={symbol}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-          >
-            <Badge badgeContent={amount} max={Number.MAX_SAFE_INTEGER}>
-              {!tokenId ? (
-                <img
-                  src="bch-logos/logo-2020/bitcoin-cash-circle.svg"
-                  alt={symbol}
-                />
-              ) : (
-                <img
-                  src={`https://tokens.bch.sx/64/${tokenId}.png`}
-                  alt={symbol}
-                />
-              )}
-            </Badge>
-          </Badge>
+        <Badge badgeContent={amount} max={Number.MAX_SAFE_INTEGER}>
+          <ReactImageFallback
+            src={
+              tokenId
+                ? `https://tokens.bch.sx/64/${tokenId}.png`
+                : "bch-logos/logo-2020/bitcoin-cash-circle.svg"
+            }
+            initialImage={<CircularProgress />}
+            fallbackImage={
+              <Blockies
+                style={{ borderRadius: "50%" }}
+                seed={tokenId}
+                size={10}
+              />
+            }
+            alt=""
+          />
         </Badge>
       </Badge>
+      <AssetDetails
+        open={showDetails}
+        onClose={() => setShowDetails(false)}
+        symbol={symbol}
+        tokenId={tokenId}
+        amount={amount}
+      />
     </StyledAsset>
   );
 };

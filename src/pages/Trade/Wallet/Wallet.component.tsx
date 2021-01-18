@@ -1,28 +1,15 @@
+import { Box, Chip, Tooltip } from "@material-ui/core";
 import React from "react";
 import { Fade } from "react-awesome-reveal";
+import QRCode from "qrcode.react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import FileCopyIcon from "@material-ui/icons/FileCopy";
 import { Asset } from "../../../components";
+import { useWallet } from "../../../utils/Wallet";
 import { TitleText, StyledWallet, StyledAsssets } from "./Wallet.styles";
 
 export const Wallet = () => {
-  const assets = [
-    {
-      symbol: "BCH",
-      tokenId: "",
-      amount: 2.01,
-    },
-    {
-      symbol: "USDt",
-      tokenId:
-        "9fc89d6b7d5be2eac0b3787c5b8236bca5de641b5bafafc8f450727b63615c11",
-      amount: 100,
-    },
-    {
-      symbol: "SPICE",
-      tokenId:
-        "4de69e374a8ed21cbddd47f2338cc0f479dc58daa2bbe11cd604ca488eca0ddf",
-      amount: 10.155,
-    },
-  ];
+  const wallet = useWallet();
 
   return (
     <Fade triggerOnce>
@@ -30,12 +17,48 @@ export const Wallet = () => {
         <TitleText variant="h5" marked markDirection="right">
           Wallet
         </TitleText>
+        <Box display="flex" justifyContent="flex-end">
+          <Tooltip title={<QRCode value={wallet?.Address} />}>
+            <Chip
+              icon={
+                <img
+                  width="24px"
+                  src="bch-logos/logo-2020/bitcoin-cash-circle.svg"
+                  alt="BCH"
+                />
+              }
+              label={
+                <CopyToClipboard
+                  text={wallet?.Address}
+                  options={{ message: "copied!" }}
+                >
+                  <span>
+                    BCH Address <FileCopyIcon />
+                  </span>
+                </CopyToClipboard>
+              }
+            />
+          </Tooltip>
+          <Tooltip title={<QRCode value={wallet?.SLPAddress} />}>
+            <Chip
+              icon={<img width="16px" src="slp-logo.svg" alt="SLP" />}
+              label={
+                <CopyToClipboard text={wallet?.SLPAddress}>
+                  <span>
+                    SLP Address <FileCopyIcon />
+                  </span>
+                </CopyToClipboard>
+              }
+            />
+          </Tooltip>
+        </Box>
         <StyledAsssets>
-          {assets.map((asset) => (
+          <Asset symbol="BCH" amount={wallet.GetBchBalance().toFixed()} />
+          {Array.from(wallet.GetSlpBalances() || []).map(([tokenId, token]) => (
             <Asset
-              symbol={asset.symbol}
-              amount={asset.amount}
-              tokenId={asset.tokenId}
+              symbol={token.name}
+              amount={token.amountWithDecimals?.toFixed()}
+              tokenId={tokenId}
             />
           ))}
         </StyledAsssets>

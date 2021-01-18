@@ -4,6 +4,10 @@ import Particles from "react-particles-js";
 import { StyledBlockchain } from "./Blockchain.styles";
 import { Shader } from "..";
 
+interface BlockchainProps {
+  useWebgl?: boolean;
+}
+
 const hasWebgl2Support = () => {
   try {
     return !!document.createElement("canvas").getContext("webgl2");
@@ -12,9 +16,21 @@ const hasWebgl2Support = () => {
   }
 };
 
-export const Blockchain = () => {
-  const supportWebgl2 = hasWebgl2Support();
+export const Blockchain: React.FC<BlockchainProps> = ({ useWebgl }) => {
   const blockchainRoot = document.getElementById("blockchain-root");
+
+  if (!useWebgl) {
+    return ReactDOM.createPortal(
+      <StyledBlockchain>
+        <video autoPlay muted loop>
+          <source src="long-background.mp4" type="video/mp4" />
+        </video>
+      </StyledBlockchain>,
+      blockchainRoot as HTMLElement
+    );
+  }
+
+  const supportWebgl2 = hasWebgl2Support();
 
   return (
     blockchainRoot &&

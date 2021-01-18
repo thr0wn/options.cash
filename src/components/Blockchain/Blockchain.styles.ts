@@ -5,7 +5,20 @@ export const StyledBlockchain = styled.div`
   animation: fadeInFromNone 1s ease-out;
   width: 100vw;
   height: 100vh;
+  max-height: 100vh;
   overflow: hidden;
+
+  video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    transform: scaleY(1.1);
+  }
 
   #tsparticles {
     position: absolute;

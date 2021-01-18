@@ -31,4 +31,27 @@ export const TitleText = styled(Text)`
 export const StyledWallet = styled.div`
   display: flex;
   flex-direction: column;
+
+  .MuiChip-root {
+    background: rgba(44, 50, 64, 0.5);
+    color: white;
+    margin-top: 18px;
+    cursor: pointer;
+
+    .MuiChip-label {
+      > * {
+        display: flex;
+        align-items: center;
+
+        svg {
+          margin-left: 8px;
+          width: 0.8rem;
+        }
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: 8px;
+    }
+  }
 `;

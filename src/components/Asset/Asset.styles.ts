@@ -5,13 +5,14 @@ export const StyledAsset = styled.div`
   padding: 8px;
   cursor: pointer;
 
-  img {
-    width: 64px;
-    height: 64px;
+  img, canvas {
+    width: 64px !important;
+    height: 64px !important;
     border-radius: 50%;
   }
 
   .MuiBadge-anchorOriginBottomRightRectangle,
+  .MuiBadge-anchorOriginTopLeftRectangle,
   .MuiBadge-anchorOriginBottomLeftRectangle {
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -23,6 +24,7 @@ export const StyledAsset = styled.div`
   }
 
   &:hover {
+    .MuiBadge-anchorOriginTopLeftRectangle,
     .MuiBadge-anchorOriginBottomRightRectangle,
     .MuiBadge-anchorOriginBottomLeftRectangle {
       opacity: 1;
