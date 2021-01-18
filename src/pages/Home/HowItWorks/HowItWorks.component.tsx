@@ -10,7 +10,7 @@ export const HowItWorks = () => {
         <TitleText variant="h4" marked markDirection="right">
           How it works?
         </TitleText>
-        <YouTube className="youtube" videoId="9-OkfALrbBU" />
+        <YouTube className="youtube" videoId="eoJzMnP0saE" />
       </StyledHowItWorks>
     </Fade>
   );

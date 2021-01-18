@@ -21,7 +21,7 @@ export const Presentation = () => {
 
       <Fade delay={2000} duration={1000} triggerOnce>
         <SecondaryText variant="h6">
-          Manage portfolio risks and returns with on-chain options
+         on-chain options on Bitcoin Cash
         </SecondaryText>
         <Box display="flex" flexDirection="row-reverse">
           <Link to="trade">
