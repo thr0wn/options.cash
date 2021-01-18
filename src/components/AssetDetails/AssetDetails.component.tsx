@@ -183,7 +183,17 @@ export const AssetDetails: React.FC<AssetDetailsProps> = ({
               {tab === "receive" && (
                 <StyledTabContent>
                   <Chip
-                    icon={<img width="16px" src="slp-logo.svg" alt="SLP" />}
+                    icon={
+                      <img
+                        width="16px"
+                        src={
+                          tokenId
+                            ? "slp-logo.svg"
+                            : "bch-logos/logo-2020/bitcoin-cash-circle.svg"
+                        }
+                        alt="SLP"
+                      />
+                    }
                     label={tokenId ? wallet?.SLPAddress : wallet?.Address}
                   />
                   <QRCode

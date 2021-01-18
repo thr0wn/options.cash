@@ -6,6 +6,7 @@ import { Shader } from "..";
 
 interface BlockchainProps {
   useWebgl?: boolean;
+  useShader?: boolean;
 }
 
 const hasWebgl2Support = () => {
@@ -16,7 +17,10 @@ const hasWebgl2Support = () => {
   }
 };
 
-export const Blockchain: React.FC<BlockchainProps> = ({ useWebgl }) => {
+export const Blockchain: React.FC<BlockchainProps> = ({
+  useWebgl = true,
+  useShader = false,
+}) => {
   const blockchainRoot = document.getElementById("blockchain-root");
 
   if (!useWebgl) {
@@ -36,7 +40,7 @@ export const Blockchain: React.FC<BlockchainProps> = ({ useWebgl }) => {
     blockchainRoot &&
     ReactDOM.createPortal(
       <StyledBlockchain>
-        {supportWebgl2 ? (
+        {supportWebgl2 && useShader ? (
           <Shader />
         ) : (
           <Particles
