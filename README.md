@@ -16,11 +16,11 @@
 <hr>
 
 ## 🔍 About
-**options.cash** aims to bring decentralized non-custodial options to Bitcoin Cash through covenant contracts and price oracles. Options are a type of derivative in which the investor pay for the right to optionally buy or sell an asset at an agreed-upon price and date.
+**options.cash** aims to bring on-chain options to Bitcoin Cash through covenant contracts and price oracles. Options are a type of derivative in which the investor pay for the right to optionally buy or sell an asset at an agreed-upon price and date.
 
 With DeFi protocols like AnyHedge gaining more adoption on BCH, our goal is to serve as an tool to manage portfolio risks and returns.
 
-The initial idea is to deliver an user-friendly UX to trade options of some BCH/SLP pairs. We may provide anyhedge functionalities and go even further creating ways to tokenize AnyHedge positions and use them in options strategies, providing a whole set of derivatives for BCH!
+The initial idea is to deliver an user-friendly UX to trade options of some SLP/BCH pairs.
 
 <hr>
 
@@ -65,3 +65,29 @@ The initial idea is to deliver an user-friendly UX to trade options of some BCH/
 ```bash
 yarn start
 ```
+
+## Donate
+<table>
+  <thead>
+    <tr>
+      <th>
+        BCH Address
+      </th>
+      <th>
+        SLP Address
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img height="256px" src="https://i.imgur.com/gbB0o6w.png" />
+        <p>bitcoincash:qprwefsn9qnz9zxx72948n7s52lk93nfpqqq5tda9t</p>
+      </td>
+      <td>
+        <img height="256px" src="https://i.imgur.com/J3UzTsF.png" />
+        <p>simpleledger:qrt9q69sypxxaypugxptaaz57l4gnq0x4yvl0ns0f2</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
