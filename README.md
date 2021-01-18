@@ -66,7 +66,7 @@ The initial idea is to deliver an user-friendly UX to trade options of some SLP/
 yarn start
 ```
 
-## 🙏 Help us to make it happen
+## 🙏 Help us to build it
 <table>
   <thead>
     <tr>
