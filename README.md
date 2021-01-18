@@ -31,6 +31,36 @@ The initial idea is to deliver an user-friendly UX to trade options of some BCH/
 
 <hr>
 
+## 🖼 Screenshots and gifs
+<table>
+  <thead>
+    <tr>
+      <th>
+        Trading screen!
+      </th>
+      <th>
+        Embedded wallet!
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a href="https://bchoptions.cash/#/trade">
+          <img src="./public/screenshots-and-gifs/trade.png" />
+        </a>
+      </td>
+      <td>
+        <a href="https://bchoptions.cash/#/trade">
+          <img src="./public/screenshots-and-gifs/wallet.gif" />
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
 ## 🚀 Run
 ```bash
 yarn start
