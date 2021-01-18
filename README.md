@@ -15,6 +15,13 @@
 
 <hr>
 
+## 🚀 TL;DR: Just Run it!
+```bash
+yarn start
+```
+
+<hr>
+
 ## 🔍 Project Overview
 **options.cash** aims to bring on-chain options to Bitcoin Cash through covenant contracts and price oracles. Options are a type of derivative in which the investor pays for the right to optionally buy or sell an asset at an agreed-upon price and date.
 
@@ -60,12 +67,6 @@ The idea is to deliver a user-friendly UX to trade options of some SLP/BCH pairs
 </table>
 
 <hr>
-
-## 🚀 Run
-```bash
-yarn start
-```
-
 
 ## 💡 Inspiration
 Options can be really helpful to protect a portfolio, as someone interested in getting it only needs to pay a relatively small premium. On the other hand, one may want to sell the rights of
