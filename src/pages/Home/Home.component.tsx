@@ -2,6 +2,7 @@ import React from "react";
 import { Blockchain } from "../../components";
 import { Presentation } from "./Presentation";
 import { HowItWorks } from "./HowItWorks";
+import { Simulate } from "./Simulate";
 import { StyledContent, StyledHome } from "./Home.styles";
 
 export const Home = () => {
@@ -11,6 +12,7 @@ export const Home = () => {
       <StyledContent>
         <Presentation />
         <HowItWorks />
+        <Simulate />
       </StyledContent>
     </StyledHome>
   );

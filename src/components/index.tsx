@@ -9,3 +9,4 @@ export * from "./Theme";
 export * from "./Asset";
 export * from "./AssetPair";
 export * from "./AssetDetails";
+export * from "./Plot";
